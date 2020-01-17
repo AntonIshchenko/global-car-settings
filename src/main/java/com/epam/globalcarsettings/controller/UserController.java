@@ -1,5 +1,7 @@
 package com.epam.globalcarsettings.controller;
 
+import com.epam.globalcarsettings.constants.AuthentificationResponse;
+import com.epam.globalcarsettings.dto.UserRegistrationForm;
 import com.epam.globalcarsettings.repository.UserRepository;
 import com.epam.globalcarsettings.service.UserService;
 import org.slf4j.Logger;
@@ -21,8 +23,9 @@ public class UserController {
   }
 
   @PostMapping("/register")
-  public void registerUser() {
+  public AuthentificationResponse registerUser(UserRegistrationForm registrationForm) {
 
+    return AuthentificationResponse.ALREADY_EXISTS;
   }
 
 }
