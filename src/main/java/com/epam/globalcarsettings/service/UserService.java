@@ -1,5 +1,7 @@
 package com.epam.globalcarsettings.service;
 
+import com.epam.globalcarsettings.dto.UserRegistrationForm;
+import com.epam.globalcarsettings.entities.User;
 import com.epam.globalcarsettings.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,4 +20,18 @@ public class UserService {
     this.userRepository = userRepository;
   }
 
+  public boolean checkPasswords(UserRegistrationForm form) {
+    return form.getPassword().equals(form.getDuplicatePassword());
+  }
+
+  public boolean addUser(UserRegistrationForm registrationForm) {
+    User user = new User().builder()
+        .name(registrationForm.getName())
+        .email(registrationForm.getEmail())
+        .password(registrationForm.getPassword())
+        .build();
+
+    userRepository.save(user);
+    return true;
+  }
 }

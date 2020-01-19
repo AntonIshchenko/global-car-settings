@@ -1,17 +1,8 @@
 package com.epam.globalcarsettings.repository;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import com.epam.globalcarsettings.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class UserRepository {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-  private final static Logger log = LoggerFactory.getLogger(UserRepository.class);
-
-  @Autowired
-  public UserRepository() {
-
-  }
 }

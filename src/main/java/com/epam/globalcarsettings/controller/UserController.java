@@ -2,7 +2,6 @@ package com.epam.globalcarsettings.controller;
 
 import com.epam.globalcarsettings.constants.AuthentificationResponse;
 import com.epam.globalcarsettings.dto.UserRegistrationForm;
-import com.epam.globalcarsettings.repository.UserRepository;
 import com.epam.globalcarsettings.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +25,8 @@ public class UserController {
 
   @PostMapping("/register")
   public AuthentificationResponse registerUser(UserRegistrationForm registrationForm) {
-
+    boolean passwordMatch = userService.checkPasswords(registrationForm);
+    boolean isAdded = userService.addUser(registrationForm);
     return AuthentificationResponse.SUCCESS;
   }
 

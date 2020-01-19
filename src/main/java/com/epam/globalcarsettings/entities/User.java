@@ -1,6 +1,7 @@
 package com.epam.globalcarsettings.entities;
 
 import java.util.Objects;
+import javax.persistence.Access;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,12 +15,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(name = "USERS")
+@Builder
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Table(name = "USERS")
 public class User {
 
   @Id
@@ -29,8 +30,6 @@ public class User {
   @Column(unique = true)
   private String email;
   private String password;
-  private String duplicatePassword;
-
 
   @Override
   public boolean equals(Object o) {
@@ -44,13 +43,12 @@ public class User {
     return id == user.id &&
         Objects.equals(name, user.name) &&
         Objects.equals(email, user.email) &&
-        Objects.equals(password, user.password) &&
-        Objects.equals(duplicatePassword, user.duplicatePassword);
+        Objects.equals(password, user.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, email, password, duplicatePassword);
+    return Objects.hash(id, name, email, password);
   }
 
   @Override
@@ -60,7 +58,6 @@ public class User {
         ", name='" + name + '\'' +
         ", email='" + email + '\'' +
         ", password='" + password + '\'' +
-        ", duplicatePassword='" + duplicatePassword + '\'' +
         '}';
   }
 }
