@@ -22,10 +22,10 @@ public class UserController {
     this.userService = userService;
   }
 
-  @PostMapping("/register")
+  @PostMapping("/regigster")
   public AuthentificationResponse registerUser(UserRegistrationForm registrationForm) {
 
-    return AuthentificationResponse.ALREADY_EXISTS;
+    return AuthentificationResponse.SUCCESS;
   }
 
 }
