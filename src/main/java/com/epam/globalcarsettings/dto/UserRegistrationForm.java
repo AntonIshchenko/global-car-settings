@@ -1,5 +1,7 @@
 package com.epam.globalcarsettings.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public class UserRegistrationForm {
 
   private final String name;
@@ -7,6 +9,7 @@ public class UserRegistrationForm {
   private final String password;
   private final String duplicatePassword;
 
+  @JsonCreator
   public UserRegistrationForm(String name, String email, String password, String duplicatePassword) {
     this.name = name;
     this.email = email;
