@@ -4,7 +4,6 @@ import com.epam.globalcarsettings.dto.UserLoginForm;
 import com.epam.globalcarsettings.dto.UserRegistrationForm;
 import com.epam.globalcarsettings.entities.User;
 import com.epam.globalcarsettings.repository.UserRepository;
-import com.epam.globalcarsettings.util.ExceptionMessageHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +17,10 @@ public class UserService {
   private final static Logger log = LoggerFactory.getLogger(UserService.class);
 
   private final UserRepository userRepository;
-  private final ExceptionMessageHandler exceptionMessageHandler;
 
   @Autowired
-  public UserService(UserRepository userRepository,
-      ExceptionMessageHandler exceptionMessageHandler) {
+  public UserService(UserRepository userRepository) {
     this.userRepository = userRepository;
-    this.exceptionMessageHandler = exceptionMessageHandler;
   }
 
   public boolean checkPasswords(UserRegistrationForm form) {

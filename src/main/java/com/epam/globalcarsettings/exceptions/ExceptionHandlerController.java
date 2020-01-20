@@ -30,12 +30,6 @@ public class ExceptionHandlerController {
     return getExceptionResponseDto(exception);
   }
 
-  @ResponseStatus(HttpStatus.BAD_REQUEST)
-  @ExceptionHandler(UserExceptions.class)
-  ExceptionResponseDto badRequestExceptionHandler(Exception exception) {
-    return getExceptionResponseDto(exception);
-  }
-
   ExceptionResponseDto getExceptionResponseDto(Exception exception) {
     String exceptionMessage = exception.getMessage();
     if (exceptionMessage == null) {
