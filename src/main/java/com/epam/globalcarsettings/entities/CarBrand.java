@@ -13,19 +13,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(name = "CAR_BRAND")
 @Builder
-@Table(name = "CAR_MODEL")
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CarModel {
+public class CarBrand {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String brand;
-  private String model;
+  private String country;
 
   @Override
   public boolean equals(Object o) {
@@ -35,23 +35,23 @@ public class CarModel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CarModel carModel = (CarModel) o;
-    return Objects.equals(id, carModel.id) &&
-        Objects.equals(brand, carModel.brand) &&
-        Objects.equals(model, carModel.model);
+    CarBrand carBrand = (CarBrand) o;
+    return Objects.equals(id, carBrand.id) &&
+        Objects.equals(brand, carBrand.brand) &&
+        Objects.equals(country, carBrand.country);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, brand, model);
+    return Objects.hash(id, brand, country);
   }
 
   @Override
   public String toString() {
     return "CarModel{" +
         "id=" + id +
-        ", brand='" + brand + '\'' +
-        ", model='" + model + '\'' +
+        ", make='" + brand + '\'' +
+        ", model='" + country + '\'' +
         '}';
   }
 }

@@ -1,11 +1,15 @@
 package com.epam.globalcarsettings.repository;
 
-import com.epam.globalcarsettings.dto.CarModelDto;
-import com.epam.globalcarsettings.entities.CarModel;
+import com.epam.globalcarsettings.entities.CarBrand;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CarModelRepository extends JpaRepository<CarModel, Long> {
+public interface CarModelRepository extends JpaRepository<CarBrand, Long> {
 
-  CarModel findByMakeAndModel(String make, String model);
+  CarBrand findByBrandAndCountry(String brand, String country);
+
+  List<CarBrand> findAllCarBrandByCountry(String country);
+
+  CarBrand findCarBrandByBrand(String brand);
 
 }

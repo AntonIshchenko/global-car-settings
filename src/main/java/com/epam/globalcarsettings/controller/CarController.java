@@ -1,11 +1,13 @@
 package com.epam.globalcarsettings.controller;
 
-import com.epam.globalcarsettings.dto.CarModelDto;
-import com.epam.globalcarsettings.entities.CarModel;
+import com.epam.globalcarsettings.dto.CarBrandDto;
+import com.epam.globalcarsettings.entities.CarBrand;
 import com.epam.globalcarsettings.service.CarService;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,9 +25,18 @@ public class CarController {
     this.carService = carService;
   }
 
-  @PostMapping("/add-car-model")
-  public CarModel addCarModel(CarModelDto carModelDto) {
-    return carService.addCarModel(carModelDto);
+  @PostMapping("/add-car-brand")
+  public CarBrand addCarBrand(CarBrandDto carBrandDto) {
+    return carService.addCarBrand(carBrandDto);
   }
 
+  @GetMapping("/get-car-brand")
+  public List<CarBrand> getCarBrand(String brand) {
+    return carService.getCarBrand(brand);
+  }
+
+  @GetMapping("/get-car-country")
+  public CarBrand getCarCountry(String country) {
+    return carService.getCarCountry(country);
+  }
 }
