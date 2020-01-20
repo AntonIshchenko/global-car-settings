@@ -1,5 +1,6 @@
 package com.epam.globalcarsettings.service;
 
+import com.epam.globalcarsettings.dto.UserLoginForm;
 import com.epam.globalcarsettings.dto.UserRegistrationForm;
 import com.epam.globalcarsettings.entities.User;
 import com.epam.globalcarsettings.exceptions.UserExceptions;
@@ -24,7 +25,9 @@ public class UserService {
 
   public boolean checkPasswords(UserRegistrationForm form) {
     if (!form.getPassword().equals(form.getDuplicatePassword())) {
-      throw new UserExceptions("Invalid password confirmation!");
+      String message  ="Invalid password confirmation!";
+      log.error(message);
+      throw new UserExceptions(message);
     }
     return true;
   }
@@ -32,10 +35,15 @@ public class UserService {
   public User addUser(UserRegistrationForm registrationForm) {
     User user = buildUser(registrationForm);
 
-    if (!isExists(user)) {
+    if (findUserByEmail(registrationForm.getEmail()) == null) {
+      log.debug("User registered and added to database");
       userRepository.save(user);
+      return user;
+    } else {
+      String message = "User with " + registrationForm.getEmail() + " email, already registered, please log in";
+      log.error(message);
+      throw new UserExceptions(message);
     }
-    return user;
   }
 
   private User buildUser(UserRegistrationForm registrationForm) {
@@ -46,18 +54,25 @@ public class UserService {
         .build();
   }
 
-  private boolean isExists(User user) {
+  private User findUserByEmail(String email) {
     List<User> all = userRepository.findAll();
     for (User currentUser : all) {
-      if (currentUser.getEmail().equals(user.getEmail())) {
-        return true;
+      if (currentUser.getEmail().equals(email)) {
+        return currentUser;
       }
     }
-    return false;
+    return null;
   }
 
-  public boolean loginUser(UserRegistrationForm registrationForm) {
-    User user = buildUser(registrationForm);
-    return isExists(user);
+  public User loginUser(UserLoginForm loginForm) {
+    User user = findUserByEmail(loginForm.getEmail());
+    if (user != null) {
+      log.info("User logged in");
+      return user;
+    } else {
+      String message = "User with " + loginForm.getEmail() + " email, does not exist";
+      log.error(message);
+      throw new UserExceptions(message);
+    }
   }
 }

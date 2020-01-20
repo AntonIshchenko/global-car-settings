@@ -1,7 +1,9 @@
 package com.epam.globalcarsettings.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import lombok.Getter;
 
+@Getter
 public class UserRegistrationForm {
 
   private final String name;
@@ -16,22 +18,5 @@ public class UserRegistrationForm {
     this.password = password;
     this.duplicatePassword = duplicatePassword;
   }
-
-  public String getName() {
-    return name;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public String getDuplicatePassword() {
-    return duplicatePassword;
-  }
-
 
 }

@@ -1,6 +1,7 @@
 package com.epam.globalcarsettings.controller;
 
 import com.epam.globalcarsettings.constants.AuthentificationResponse;
+import com.epam.globalcarsettings.dto.UserLoginForm;
 import com.epam.globalcarsettings.dto.UserRegistrationForm;
 import com.epam.globalcarsettings.entities.User;
 import com.epam.globalcarsettings.service.UserService;
@@ -37,8 +38,8 @@ public class UserController {
   }
 
   @PostMapping("/login")
-  public AuthentificationResponse loginUser(UserRegistrationForm registrationForm) {
-    boolean isExist = userService.loginUser(registrationForm);
+  public AuthentificationResponse loginUser(UserLoginForm loginForm) {
+    User user = userService.loginUser(loginForm);
     return AuthentificationResponse.SUCCESS;
   }
 
