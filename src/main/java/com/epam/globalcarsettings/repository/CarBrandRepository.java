@@ -4,7 +4,7 @@ import com.epam.globalcarsettings.entities.CarBrand;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CarModelRepository extends JpaRepository<CarBrand, Long> {
+public interface CarBrandRepository extends JpaRepository<CarBrand, Long> {
 
   CarBrand findByBrandAndCountry(String brand, String country);
 

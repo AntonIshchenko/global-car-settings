@@ -31,12 +31,12 @@ public class CarController {
   }
 
   @GetMapping("/get-car-brand")
-  public List<CarBrand> getCarBrand(String brand) {
-    return carService.getCarBrand(brand);
+  public List<CarBrand> getCarBrand(String country) {
+    return carService.getCarBrand(country);
   }
 
   @GetMapping("/get-car-country")
-  public CarBrand getCarCountry(String country) {
-    return carService.getCarCountry(country);
+  public CarBrand getCarCountry(String brand) {
+    return carService.getCarCountry(brand);
   }
 }
