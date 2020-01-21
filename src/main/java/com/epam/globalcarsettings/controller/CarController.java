@@ -1,6 +1,7 @@
 package com.epam.globalcarsettings.controller;
 
 import com.epam.globalcarsettings.dto.CarBrandDto;
+import com.epam.globalcarsettings.entities.CarBody;
 import com.epam.globalcarsettings.entities.CarBrand;
 import com.epam.globalcarsettings.service.CarService;
 import java.util.List;
@@ -38,5 +39,10 @@ public class CarController {
   @GetMapping("/get-car-country")
   public CarBrand getCarCountry(String brand) {
     return carService.getCarCountry(brand);
+  }
+
+  @PostMapping("/add-car-body")
+  public CarBody addCarBody(CarBody carBody) {
+    return carService.addCarBody(carBody);
   }
 }

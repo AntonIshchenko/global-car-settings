@@ -24,34 +24,8 @@ public class CarModel {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
-  private String brand;
+  private String brandId;
   private String model;
+  private String bodyId;
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CarModel carModel = (CarModel) o;
-    return Objects.equals(id, carModel.id) &&
-        Objects.equals(brand, carModel.brand) &&
-        Objects.equals(model, carModel.model);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, brand, model);
-  }
-
-  @Override
-  public String toString() {
-    return "CarModel{" +
-        "id=" + id +
-        ", brand='" + brand + '\'' +
-        ", model='" + model + '\'' +
-        '}';
-  }
 }

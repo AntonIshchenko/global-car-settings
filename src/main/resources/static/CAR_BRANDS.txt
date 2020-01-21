@@ -1,0 +1,171 @@
+AC Cars
+Acura
+Agrale
+Aixam
+Alfa Romeo
+Alpina
+Ariel
+ARO
+Asia
+Ashok Leyland
+Aston Martin
+Audi
+Austin
+AZLK (Москвич)
+Beifang Benchi
+BelAZ
+Bentley
+BMC
+BMW
+Brilliance
+Bristol
+Bugatti
+Buick
+BYD
+Cadillac
+Callaway
+САМС
+Caterham
+Chana
+Changfeng
+Chery
+Chevrolet
+Chrysler
+Citroen
+Cizeta
+Dacia
+Dadi
+Daewoo
+DAF
+Daihatsu
+De Lorean
+De Tomaso
+Derways
+Dodge
+DONGFENG
+Eagle
+Eicher
+ErAZ
+Excalibur
+FAW
+Ferrari
+Fiat
+Ford
+GAZ (ГАЗ)
+Geely
+Geo
+Ginetta
+GMC
+Great Wall
+HAFEI
+Harley Davidson
+Hino
+Holden
+Honda
+HOWO
+Huanghai
+Hummer
+Hyundai
+IKCO
+IJ (Иж)
+Infiniti
+Innocenti
+Iran Khodro
+Isuzu
+Iveco
+Jaguar
+Jeep
+Jensen
+JMC
+Kamaz
+KAZ
+Kenworth Truck
+Kia
+Koenigseegg
+Lamborghini
+Lancia
+Land Rover
+Landwind
+LAZ
+Lexus
+LiAZ
+Lincoln
+Lotus
+LUAZ (ЛуАЗ)
+Mahindra
+MAN
+Maple (SMA)
+Marcos
+Maruti
+Maserati
+Maybach
+MAZ
+Mazda
+McLaren
+Mega
+Mercedes-Benz
+Mercury
+MG
+Mini
+Mitsubishi
+Morgan
+Mustang
+Nissan
+Oldsmobile
+Opel
+Packard
+Pagani
+PAZ
+Peterbilt
+Peugeot
+Plymouth
+Pontiac
+Porsche
+Proton
+RAF
+REUANT
+Renault
+Rolls Royce
+Rover
+Saab
+Saleen
+Saturn
+Scania
+Scion
+Seat
+Setra
+SHAANXI
+Shelby
+Shuanghuan
+Sisu
+Skoda
+SMART
+Soueast
+Spyker
+Ssang Young
+Studebekker
+Subaru
+Suzuki
+TagAZ
+Tata
+Tatra
+Toyota
+Trabant
+Tramontana
+Triumph
+TVR
+UAZ
+Ural (Урал)
+Vauxhall
+VAZ
+Venturi
+VIS (ВАЗинвестСервис)
+Volkswagen
+Volvo
+Western Star
+Wiesmann
+Xinkai
+Zastava
+ZAZ
+ZIL (Зил)
+ZXAuto
